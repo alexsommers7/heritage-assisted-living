@@ -1,0 +1,62 @@
+.accordion {
+  list-style: none;
+  padding-left: 4rem; // extra on left for arrows
+
+  &__item {
+    position: relative;
+    margin: 4rem 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__trigger {
+    appearance: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    color: $color-background;
+    padding: 0;
+
+    &.active {
+      .accordion__arrow {
+        transform: rotate(0deg);
+      }
+      & ~ .accordion__description {
+        visibility: visible;
+        opacity: 1;
+        max-height: 700px; // make sure this is > the highest possible height of this element
+      }
+    }
+
+    & polygon {
+      fill: $color-background;
+    }
+  }
+
+  &__arrow {
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    top: 0;
+    left: -3.5rem;
+    transform: rotate(-90deg);
+    transition: all 0.5s ease;
+    transform-origin: center;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  &__description {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.5s ease;
+  }
+}

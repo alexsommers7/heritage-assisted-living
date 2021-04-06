@@ -1,0 +1,22 @@
+.success {
+  min-height: 100vh;
+  background-color: $color-background;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 2.4rem;
+
+  &__message {
+    animation: fade-in 1s ease-out;
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    text-transform: uppercase;
+  }
+}

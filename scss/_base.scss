@@ -1,0 +1,113 @@
+// BASE SETUP
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include respond(desk-small) {
+    font-size: 66.75%;
+  }
+
+  @include respond(desk-xlarge) {
+    font-size: 80%;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-background;
+}
+
+body {
+  font-family: $font-family-main;
+  font-weight: $font-weight-default;
+  line-height: 1.6;
+  color: $color-text;
+  background-color: $color-background;
+  overflow-x: hidden;
+
+  // hide all but outdated browser alert on ie
+  & > *:not(.ie-alert) {
+    @include ieOnly {
+      display: none !important;
+    }
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: $design-border-radius-default;
+  object-fit: cover;
+}
+
+section {
+  padding: $layout-section-padding-small;
+  max-width: $layout-max-width;
+  font-size: 1.6rem;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond(tab-land) {
+    padding: $layout-section-padding-medium;
+  }
+
+  @include respond(desk-small) {
+    padding: $layout-section-padding-large;
+  }
+
+  &.full-width {
+    padding: 0;
+  }
+
+  &.dark {
+    background-color: $color-text;
+    color: $color-background;
+  }
+}
+
+.ie-alert {
+  display: none;
+
+  @include ieOnly {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    height: 100vh;
+    width: 100vw;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background-color: $color-background;
+  }
+}
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}

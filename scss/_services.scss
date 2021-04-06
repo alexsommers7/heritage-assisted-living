@@ -1,0 +1,127 @@
+.services {
+  &__overview {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+
+    @include respond(tab-port) {
+      justify-content: space-around;
+      padding: 7rem 7rem;
+    }
+
+    @include respond(desk-medium) {
+      padding: 7rem 7rem 0;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 4rem 2rem 6rem;
+    max-width: 1700px;
+    margin: auto;
+
+    @include respond(tab-land) {
+      padding: 6rem 0;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.overview {
+  &__text {
+    align-self: flex-start;
+    flex: 0 0 100%;
+    padding: 3rem;
+
+    @include respond(tab-land) {
+      border-left: 2px solid $color-background;
+      flex: 0 0 55%;
+    }
+
+    @include respond(desk-medium) {
+      flex: 0 0 40%;
+    }
+  }
+
+  &__image {
+    flex: 0 0 80%;
+    padding: 2rem 0 5rem;
+
+    @include respond(tab-land) {
+      flex: 0 0 35%;
+      padding: 0;
+      transform: translate(-2rem, -17rem);
+    }
+
+    @include respond(desk-medium) {
+      flex: 0 0 35%;
+      transform: translate(-7rem, -14rem);
+      margin-bottom: -5rem; // pull 'services included' section up when < all accordion items are open
+    }
+  }
+
+  &__accordion {
+    color: $color-background;
+
+    & .accordion__item {
+      max-width: 50rem;
+    }
+  }
+}
+
+.details {
+  &__column {
+    text-align: center;
+    margin: 6rem 0;
+
+    &:first-child,
+    &:last-child {
+      margin: 0;
+    }
+
+    @include respond(tab-land) {
+      margin: 0;
+    }
+
+    & > h4 {
+      font-size: 2rem;
+    }
+  }
+
+  &__icon {
+    width: 85px;
+    height: 85px;
+    fill: $color-background;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    padding: 1rem 1rem 1rem 3.5rem; // extra on left to account for pseudo element
+    text-align: left;
+    max-width: 350px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > li {
+      position: relative;
+      width: 100%;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: -2.5rem;
+        top: 5px;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 426.667 426.667' style='enable-background:new 0 0 426.667 426.667; fill: %23f5f5f5;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M421.876,56.307c-6.548-6.78-17.352-6.968-24.132-0.42c-0.142,0.137-0.282,0.277-0.42,0.42L119.257,334.375 l-90.334-90.334c-6.78-6.548-17.584-6.36-24.132,0.42c-6.388,6.614-6.388,17.099,0,23.713l102.4,102.4 c6.665,6.663,17.468,6.663,24.132,0L421.456,80.44C428.236,73.891,428.424,63.087,421.876,56.307z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

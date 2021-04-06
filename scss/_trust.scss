@@ -1,0 +1,32 @@
+.trust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__icon,
+  &__text {
+    flex: 0 0 100%;
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: 16rem;
+    height: 16rem;
+    margin-bottom: 1rem;
+
+    @include respond(tab-land) {
+      flex: 0 1 25%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    padding: 2rem 1rem 0;
+
+    @include respond(tab-land) {
+      flex: 0 0 33%;
+      padding: 0;
+    }
+  }
+}

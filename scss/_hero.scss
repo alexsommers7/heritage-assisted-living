@@ -1,0 +1,75 @@
+.hero {
+  position: relative;
+  padding: 2rem;
+  color: $color-text;
+  background-image: linear-gradient(to bottom, rgba(34, 35, 39, 0.25), rgba(34, 35, 39, 0.25)),
+    url(/img/home-hero--mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond(tab-port) {
+    background-image: linear-gradient(to bottom, rgba(34, 35, 39, 0.25), rgba(34, 35, 39, 0.25)),
+      url(/img/home-hero--desktop.jpg);
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-text;
+    animation: fade-out 1.5s ease-in-out forwards;
+    z-index: 10;
+  }
+
+  @include respond(desk-small) {
+    min-height: 50rem;
+  }
+
+  &__heading {
+    opacity: 0;
+    animation: fade-in-down 0.75s 2.25s ease-in-out forwards;
+  }
+
+  &__text {
+    padding: 3rem 0;
+    text-align: center;
+    z-index: 20;
+
+    @include respond(tab-land) {
+      align-self: center;
+      flex: 0 0 30%;
+    }
+
+    @include respond(desk-small) {
+      padding: 0;
+      flex: 0 0 40%;
+    }
+  }
+
+  & h1,
+  & p {
+    color: $color-background;
+  }
+
+  & h1 {
+    max-width: 50rem;
+    margin: auto;
+    padding: 3rem 0;
+  }
+
+  & p {
+    align-self: flex-start;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding-left: 4px;
+    opacity: 0;
+    animation: fade-in 0.75s 1.5s ease-in-out forwards;
+  }
+}

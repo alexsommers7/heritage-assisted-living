@@ -1,0 +1,115 @@
+.contact {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  &__intro {
+    max-width: 800px;
+    margin: 2rem auto;
+
+    @include respond(tab-land) {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    flex: 0 0 100%;
+    order: 2;
+
+    @include respond(desk-small) {
+      flex: 0 0 40%;
+      order: 1;
+    }
+
+    @include respond(desk-medium) {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__map {
+    order: 1;
+    flex: 0 1 100%;
+    max-width: 600px; // same as iframe
+    padding: 2rem;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    border-radius: $design-border-radius-default;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.075);
+
+    @include respond(desk-small) {
+      flex: 0 0 40%;
+      order: 2;
+      margin: 0;
+    }
+
+    & iframe {
+      width: 100%;
+      height: 250px;
+
+      @include respond(desk-small) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tab-port) {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include respond(desk-small) {
+    padding: 2rem;
+  }
+
+  &__label {
+    color: $color-text;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  &__input,
+  &__textarea {
+    appearance: none; // override safari inset shadow default
+    font-family: $font-family-main;
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 4.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid $color-text;
+    background-color: $color-background;
+    border-radius: $design-border-radius-default;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__textarea {
+    height: 15rem;
+
+    @include respond(desk-small) {
+      height: 10rem;
+    }
+
+    &:focus {
+      border: 3px solid $color-text;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__submit {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+}

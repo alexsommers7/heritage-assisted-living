@@ -1,0 +1,66 @@
+.section--feature {
+  background-image: linear-gradient(rgba($color-text, 0.6), rgba($color-text, 0.6)), url(/img/feature-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.feature {
+  background-color: $color-background;
+  max-width: 1200px;
+  padding: 4rem 1rem;
+  margin: 2rem auto;
+  border-radius: $design-border-radius-default;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  @include respond(tab-land) {
+    padding: 5rem 1.5rem;
+    margin: 4rem auto;
+  }
+
+  &__heading {
+    position: relative;
+    font-weight: 300;
+    margin: -5px 0 3rem; // extra room for pseudo element
+
+    &::after {
+      content: '';
+      width: 8rem;
+      height: 3px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1.8rem;
+      background-color: $color-primary;
+
+      @include respond(tab-land) {
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__text {
+    flex: 0 0 90%;
+
+    @include respond(tab-land) {
+      flex: 0 0 45%;
+    }
+  }
+
+  &__image {
+    flex: 0 0 80%;
+    order: -1;
+    margin-bottom: 1.5rem;
+
+    @include respond(tab-land) {
+      flex: 0 0 40%;
+      order: 0;
+      margin-bottom: 0;
+    }
+  }
+}

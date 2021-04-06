@@ -1,0 +1,25 @@
+// UTILITY CLASSES
+.text-center {
+  text-align: center !important;
+}
+
+.small-text-center {
+  text-align: center;
+
+  @include respond(tab-land) {
+    text-align: left;
+  }
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+// show outline for focuseable items ONLY if user is using keyboard
+body.using-mouse .tab-focus {
+  outline: none;
+}

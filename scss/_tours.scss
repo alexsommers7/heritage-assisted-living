@@ -1,0 +1,35 @@
+.tours {
+  background-image: url(/img/tours-background.jpg);
+  background-size: cover;
+  background-position: left;
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-land) {
+    background-position: center;
+    min-height: 70rem;
+  }
+
+  &__text {
+    color: $color-background;
+    border-radius: $design-border-radius-default;
+    border-top: 7px solid $color-primary;
+    padding: 3rem 2rem;
+    background-color: rgba($color-text, 0.65);
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include respond(tab-land) {
+      display: block;
+      margin: 0 0 0 12%;
+      width: 450px;
+    }
+
+    & p.middle {
+      padding: 1rem 0;
+    }
+  }
+}

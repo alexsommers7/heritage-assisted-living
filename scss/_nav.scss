@@ -1,0 +1,313 @@
+// NAV
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: $color-background;
+
+  &.stick {
+    box-shadow: $design-box-shadow-default;
+
+    & .nav__logo {
+      @include respond(desk-small) {
+        width: 8rem;
+      }
+    }
+
+    & .nav__item {
+      @include respond(desk-small) {
+        margin: 0 1rem;
+      }
+
+      &.hasBtn {
+        @include respond(desk-small) {
+          margin-left: 3.5rem;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 95%;
+  margin: auto;
+
+  @include respond(desk-small) {
+    justify-content: space-between;
+    max-width: 90%;
+  }
+
+  &__logo {
+    width: 8rem;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 300; // logo lays on top of mobile nav
+    transition: all 0.5s ease;
+
+    @include respond(desk-small) {
+      width: 12rem;
+    }
+
+    & a {
+      display: inline-flex;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    height: 100vh;
+    padding: 0.75rem 0;
+    background-color: $color-primary;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    align-self: stretch;
+    overflow: hidden;
+    z-index: 200;
+    transition: all 0.5s ease;
+
+    @include respond(desk-small) {
+      height: auto;
+      justify-content: flex-end;
+      padding: 0;
+      background-color: transparent;
+      flex-direction: row;
+      position: relative;
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &.nav-closed {
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+      right: -50%;
+
+      // can't be included in .nav__list desk-small query due to specificity
+      @include respond(desk-small) {
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        right: 0;
+      }
+    }
+
+    &.nav-open {
+      visibility: visible;
+      opacity: 1;
+      right: 0;
+      top: 0;
+      position: fixed;
+
+      @include respond(desk-small) {
+        position: static;
+      }
+    }
+  }
+
+  &__item {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+
+    &:nth-child(odd)::after,
+    &:nth-child(odd)::before {
+      display: none;
+
+      @include respond(desk-small) {
+        content: '';
+        height: 20px;
+        width: 1px;
+        border-right: 1px solid rgba($color-text, 0.5);
+        display: inline-block;
+      }
+    }
+
+    &.hasBtn {
+      @include respond(desk-small) {
+        margin-left: 3.5rem;
+      }
+    }
+
+    &.hasBtn a {
+      padding: 1rem 5rem;
+      margin: 0 auto;
+
+      @include respond(desk-small) {
+        padding: 0.55rem 4.5rem;
+        margin: 1.5rem auto;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+
+    &:not(.button) {
+      &:link,
+      &:visited {
+        color: $color-background;
+        padding: 1rem 5rem;
+        transition: all 0.25s ease-in-out;
+
+        @include respond(desk-small) {
+          color: $color-text;
+        }
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 50%;
+        bottom: 2px;
+        left: 50%;
+        transform: scaleX(0) translateX(-50%);
+        transform-origin: left;
+        border-bottom: 1px solid rgba($color-background, 0.75);
+        transition: all 0.25s ease-in-out;
+
+        @include respond(desk-small) {
+          border-bottom: 1px solid $color-primary;
+        }
+      }
+
+      &:hover,
+      &:active,
+      &.current {
+        color: rgba($color-background, 0.75);
+
+        @include respond(desk-small) {
+          color: $color-primary;
+        }
+
+        &::after {
+          transform: scaleX(1) translateX(-50%);
+        }
+      }
+    }
+  }
+
+  // FUNCTIONALITY
+  &__button {
+    appearance: none;
+    border: none;
+    height: 6.5rem;
+    width: 6.5rem;
+    margin-left: auto;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
+
+      & .nav__icon::before {
+        top: -0.975rem;
+      }
+
+      & .nav__icon::after {
+        top: 0.975rem;
+      }
+    }
+
+    @include respond(desk-small) {
+      display: none;
+    }
+  }
+
+  // HAMBURGER ICON
+  &__icon {
+    position: relative;
+    margin-top: 2px;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-text;
+      display: inline-block;
+      z-index: 3000;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+      top: -0.875rem;
+    }
+
+    &::after {
+      top: 0.875rem;
+    }
+  }
+
+  // HOVER EFFECT
+  &__button:hover &__icon::before {
+    // Hamburger bars spreading apart on hover
+    top: -0.975rem;
+  }
+
+  &__button:hover &__icon::after {
+    // Hamburger bars spreading apart on hover
+    top: 0.975rem;
+  }
+
+  // X ON-CLICK ICON EFFECT
+  &__button.nav-open .nav__icon {
+    background-color: transparent; // Hide the middle bar, while maintaing its size since the psuedo elements depend on it
+  }
+
+  &__button.nav-open .nav__icon::before,
+  &__button.nav-open .nav__icon::after {
+    background-color: $color-background;
+  }
+
+  &__button.nav-open .nav__icon::before {
+    // Rotate the top bar to form one half of the X
+    transform: rotate(135deg);
+    top: 0;
+  }
+
+  &__button.nav-open .nav__icon::after {
+    // Rotate the bottom bar to form the other half of the X
+    transform: rotate(-135deg);
+    top: 0;
+  }
+}
+
+// vertical offset for anchor links
+.anchor-span {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: -80px;
+}

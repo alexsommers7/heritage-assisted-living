@@ -1,0 +1,147 @@
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 0;
+  position: relative;
+  margin-bottom: 2rem;
+
+  @include respond(tab-land) {
+    padding: 6rem 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.slider {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    flex: 0 0 55%;
+    max-width: 55%;
+  }
+
+  & img {
+    transition: transform 1s;
+    padding: 0.5rem; // make sure this is the same as the lineup margin below
+  }
+
+  &__nav {
+    position: absolute;
+    width: 100%;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+
+  &__tracker {
+    margin: 0 3rem;
+  }
+
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+  }
+}
+
+.lineup {
+  display: none;
+
+  @include respond(tab-land) {
+    display: grid;
+    flex: 0 0 33%;
+    border-radius: $design-border-radius-default;
+    background-color: #fff;
+    grid-template-rows: 1fr 70px;
+    margin: 0.5rem;
+  }
+
+  &__images {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__group {
+    flex: 0 0 100%;
+    padding: 2rem 2rem 0; // let nav fill out bottom
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1.75rem;
+    transition: transform 1s;
+
+    & button {
+      background: none;
+      border: none;
+      padding: 0;
+      border-radius: $design-border-radius-default;
+      display: flex;
+      cursor: pointer;
+      filter: brightness(0.45);
+      position: relative;
+      padding-top: 70%;
+      overflow: hidden;
+      transition: all 0.2s;
+
+      & img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+      }
+
+      &:hover,
+      &.active {
+        filter: brightness(1);
+      }
+    }
+  }
+
+  &__nav {
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__tracker {
+    margin: 0 1.5rem;
+  }
+
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+  }
+}

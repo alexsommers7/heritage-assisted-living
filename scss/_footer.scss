@@ -1,0 +1,59 @@
+.footer {
+  background-color: $color-text;
+  color: $color-background;
+  padding: $footer-padding-small;
+  font-size: 1.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    @include ieOnly {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include respond(tab-land) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__name {
+    font-size: 1.6rem;
+  }
+
+  &__left,
+  &__right {
+    margin-bottom: 1.5rem;
+    flex: 0 0 50%;
+
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    fill: $color-text;
+  }
+}
+
+.copyright {
+  font-size: 1.35rem;
+  line-height: 1.8;
+
+  @include respond(tab-land) {
+    margin-top: 1.5rem;
+  }
+}
