@@ -849,11 +849,14 @@ header {
     border: none; }
 
 .section--feature {
-  background-image: linear-gradient(rgba(34, 35, 39, 0.6), rgba(34, 35, 39, 0.6)), url(/img/feature-background.jpg);
+  background-image: linear-gradient(rgba(34, 35, 39, 0.6), rgba(34, 35, 39, 0.6)), url(/img/feature-background--mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; }
+  @media only screen and (min-width: 56.25em) {
+    .section--feature {
+      background-image: linear-gradient(rgba(34, 35, 39, 0.6), rgba(34, 35, 39, 0.6)), url(/img/feature-background.jpg); } }
 
 .feature {
   background-color: #f5f5f5;
@@ -874,7 +877,7 @@ header {
     font-weight: 300;
     margin: -5px 0 3rem; }
     .feature__heading::after {
-      content: '';
+      content: "";
       width: 8rem;
       height: 3px;
       position: absolute;

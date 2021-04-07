@@ -1,9 +1,14 @@
 .section--feature {
-  background-image: linear-gradient(rgba($color-text, 0.6), rgba($color-text, 0.6)), url(/img/feature-background.jpg);
+  background-image: linear-gradient(rgba($color-text, 0.6), rgba($color-text, 0.6)),
+    url(/img/feature-background--mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(rgba($color-text, 0.6), rgba($color-text, 0.6)), url(/img/feature-background.jpg);
+  }
 }
 
 .feature {
@@ -28,7 +33,7 @@
     margin: -5px 0 3rem; // extra room for pseudo element
 
     &::after {
-      content: '';
+      content: "";
       width: 8rem;
       height: 3px;
       position: absolute;
