@@ -852,10 +852,10 @@ header {
   background-image: linear-gradient(rgba(34, 35, 39, 0.6), rgba(34, 35, 39, 0.6)), url(/img/feature-background--mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed; }
+  background-position: center; }
   @media only screen and (min-width: 56.25em) {
     .section--feature {
+      background-attachment: fixed;
       background-image: linear-gradient(rgba(34, 35, 39, 0.6), rgba(34, 35, 39, 0.6)), url(/img/feature-background.jpg); } }
 
 .feature {
