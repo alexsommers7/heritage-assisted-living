@@ -1,13 +1,11 @@
 .gallery {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 4rem 0;
   position: relative;
   margin-bottom: 2rem;
 
   @include respond(tab-land) {
-    align-items: stretch;
+    display: flex;
+    justify-content: space-around;
     padding: 6rem 2rem;
     margin-bottom: 0;
   }

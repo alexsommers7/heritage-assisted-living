@@ -735,15 +735,13 @@ header {
         padding: 0; } }
 
 .gallery {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 4rem 0;
   position: relative;
   margin-bottom: 2rem; }
   @media only screen and (min-width: 56.25em) {
     .gallery {
-      align-items: stretch;
+      display: flex;
+      justify-content: space-around;
       padding: 6rem 2rem;
       margin-bottom: 0; } }
 
