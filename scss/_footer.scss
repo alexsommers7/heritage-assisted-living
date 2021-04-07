@@ -5,55 +5,34 @@
   font-size: 1.6rem;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
-  &__main {
+  &__content {
+    max-width: 50rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-
-    @include ieOnly {
-      flex-direction: row;
-      align-items: center;
-    }
-
-    @include respond(tab-land) {
-      flex-direction: row;
-      align-items: center;
-    }
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  &__name {
-    font-size: 1.6rem;
+  &__text,
+  &__creds {
+    margin: 0.5rem auto;
   }
 
-  &__left,
-  &__right {
-    margin-bottom: 1.5rem;
-    flex: 0 0 50%;
-
-    @include respond(tab-land) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
+  &__text {
+    flex: 0 0 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: $color-background;
   }
 
-  &__icon {
-    width: 2rem;
-    height: 2rem;
-    margin-top: 0.5rem;
-    fill: $color-text;
+  &__logo {
+    width: 10rem;
+    height: 10rem;
   }
-}
 
-.copyright {
-  font-size: 1.35rem;
-  line-height: 1.8;
-
-  @include respond(tab-land) {
-    margin-top: 1.5rem;
+  &__creds {
+    font-weight: 200;
+    font-size: 1.25rem;
   }
 }
