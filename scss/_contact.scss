@@ -108,6 +108,7 @@
 
   &__submit {
     appearance: none;
+    opacity: 1; // safari bug
     border: none;
     cursor: pointer;
     margin: 0 auto;
