@@ -1,6 +1,6 @@
 'use strict';
 
-// NAV FUNCTIONALITY
+// MOBILE NAV FUNCTIONALITY
 const navList = document.querySelector('.nav__list');
 const navToggle = document.querySelector('#navi-toggle');
 
@@ -14,9 +14,23 @@ function updateNav() {
   navList.classList.toggle('nav-closed');
 }
 
-// STICKY NAV
+// Sticky navigation: Intersection Observer API
 const navBar = document.querySelector('header');
-window.onscroll = () => (window.pageYOffset > 205 ? navBar.classList.add('stick') : navBar.classList.remove('stick'));
+
+const stickyNav = function (entries, observer) {
+  entries.forEach(entry => {
+    entry.boundingClientRect.top < 0 ? navBar.classList.add('stick') : navBar.classList.remove('stick');
+  });
+};
+
+const stickyNavOptions = {
+  root: null,
+  threshold: [0, 1],
+  rootMargin: `${navBar.getBoundingClientRect().height}px`,
+};
+
+const stickyNavObserver = new IntersectionObserver(stickyNav, stickyNavOptions);
+stickyNavObserver.observe(document.querySelector('.section--about'));
 
 // SMOOTH SCROLL FOR ANCHOR LINKS
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

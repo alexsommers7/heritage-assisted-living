@@ -198,51 +198,10 @@ body.using-mouse .tab-focus {
     transition: all 0.5s ease; }
 
 .fade {
-  transition: opacity 0.75s ease-in-out, transform 0.75s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out; }
+  transition: opacity 1s, transform 1s; }
 
-.fadeFromTop {
-  opacity: 0;
-  transform: translateY(-2rem); }
-
-.fadeFromTopVisible {
-  transform: translateY(0);
-  opacity: 1; }
-
-.fadeFromBottom {
-  opacity: 0;
-  transform: translateY(2rem); }
-
-.fadeFromBottomVisible {
-  transform: translateY(0);
-  opacity: 1; }
-
-.fadeFromLeft {
-  opacity: 0;
-  transform: translateX(-2rem); }
-
-.fadeFromLeftVisible {
-  transform: translateX(0);
-  opacity: 1; }
-
-.fadeFromRight {
-  opacity: 0;
-  transform: translateX(2rem); }
-
-.fadeFromRightVisible {
-  transform: translateX(0);
-  opacity: 1; }
-
-body .fadeDelayShort {
-  transition: opacity 0.75s 0.4s ease-in, transform 0.75s 0.4s ease-in, background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out; }
-  @media only screen and (min-width: 37.5em) {
-    body .fadeDelayShort {
-      transition: opacity 0.75s ease-in, transform 0.75s ease-in, background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out; } }
-
-body .fadeDelayLong {
-  transition: opacity 0.75s 0.6s ease-in, transform 0.75s 0.6s ease-in, background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out; }
-  @media only screen and (min-width: 37.5em) {
-    body .fadeDelayLong {
-      transition: opacity 0.75s ease-in, transform 0.75s ease-in, background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out; } }
+.fade--hidden {
+  opacity: 0; }
 
 @keyframes fade-in {
   0% {
@@ -279,12 +238,6 @@ body .fadeDelayLong {
   100% {
     opacity: 1;
     transform: translateX(0); } }
-
-@keyframes headerText {
-  0% {
-    width: 0; }
-  100% {
-    width: 40%; } }
 
 header {
   position: fixed;

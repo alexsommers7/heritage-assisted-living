@@ -9,13 +9,11 @@ const testimonialArrowRight = document.getElementById('testimonialArrowRight');
 // boolean checker for larger screens
 let largeScreen = window.screen.width >= 1400;
 
-// starting state
+// starting state and initialization
 let testimonialCurSlide = 0;
 let testimonialMaxSlide = testimonials.length;
 if (largeScreen) testimonialMaxSlide = testimonials.length / 2; // 2 testimonials per slide
 
-//////////////////////////
-// MAIN SLIDER
 function testimonialGoToSlide(slide) {
   let slidesPerSwipe = 1;
   if (largeScreen) slidesPerSwipe = 2;
@@ -32,7 +30,6 @@ function testimonialPrevSlide() {
   testimonialGoToSlide(testimonialCurSlide);
 }
 
-// initialize
 function testimonialInit() {
   testimonialGoToSlide(testimonialCurSlide);
 }
@@ -69,8 +66,7 @@ testimonialTrack.addEventListener(
   { passive: true }
 );
 
-//////////////////////////
-// EVENT HANDLERS
+// event handlers
 testimonialArrowLeft.addEventListener('click', function () {
   testimonialPrevSlide(testimonialCurSlide);
 });

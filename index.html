@@ -74,7 +74,7 @@
       </section>
       <section class="section--tours full-width">
         <div class="tours">
-          <div class="tours__text">
+          <div class="tours__text" data-fade>
             <p class="heading--2">Feel Right at Home</p>
             <p class="middle">
               Located in beautiful North Phoenix, Heritage Assisted Living is more than just a place to stay. It's a community
@@ -88,7 +88,7 @@
         <span class="anchor-span" id="services"></span>
         <div class="services__overview">
           <div class="overview__text">
-            <h2 class="heading--2">What We Do</h2>
+            <h2 class="heading--2" data-fade data-fade-axis="X" data-fade-offset="-4rem">What We Do</h2>
             <ul class="accordion overview__accordion">
               <li class="accordion__item">
                 <button class="accordion__trigger tab-focus active">
@@ -163,15 +163,15 @@
               </li>
             </ul>
           </div>
-          <div class="overview__image fade fadeFromBottom">
-            <img src="/img/services-image.jpg" alt="Caretaker providing haircut to patient" />
+          <div class="overview__image">
+            <img src="/img/services-image.jpg" alt="Caretaker providing haircut to patient" loading="lazy" />
           </div>
         </div>
         <h2 class="heading heading--2">Services Included</h2>
         <div class="services__details">
           <div class="details__column">
             <?xml version="1.0"?>
-            <svg xmlns="http://www.w3.org/2000/svg" class="details__icon fade fadeFromBottom" viewBox="0 0 512 512">
+            <svg xmlns="http://www.w3.org/2000/svg" class="details__icon" viewBox="0 0 512 512" data-fade>
               <path
                 d="M256,128A128,128,0,1,0,384,256,128.146,128.146,0,0,0,256,128Zm0,240A112,112,0,1,1,368,256,112.127,112.127,0,0,1,256,368Z"
               />
@@ -197,13 +197,14 @@
             <?xml version="1.0" encoding="iso-8859-1"?>
             <svg
               version="1.1"
-              class="details__icon fade fadeFromBottom"
+              class="details__icon"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
               y="0px"
               viewBox="0 0 480.187 480.187"
               xml:space="preserve"
+              data-fade
             >
               <g>
                 <g>
@@ -398,13 +399,14 @@
             <?xml version="1.0" encoding="iso-8859-1"?>
             <svg
               version="1.1"
-              class="details__icon fade fadeFromBottom"
+              class="details__icon"
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
               y="0px"
               viewBox="0 0 512 512"
               xml:space="preserve"
+              data-fade
             >
               <g>
                 <g>
@@ -490,7 +492,7 @@
       </section>
       <section class="section--feature">
         <span class="anchor-span" id="feature"></span>
-        <div class="feature">
+        <div class="feature" data-fade>
           <div class="feature__text">
             <p class="heading--2 small-text-center">Meet Raluca</p>
             <p class="feature__heading small-text-center"><em>Primary Caregiver</em></p>
@@ -506,7 +508,6 @@
               src="/img/feature-image.jpg"
               alt="Raluca - Primary Caregiver"
               loading="lazy"
-              class="fade fadeFromLeft"
             />
           </picture>
         </div>
@@ -794,23 +795,23 @@
           Our rates are based upon the level of care required. To get an accurate estimate of costs, book a tour, or ask any questions you may have, reach out to us via email or the form below. We look forward to welcoming your loved one home!
         </p>
         <div class="contact">
-          <div class="contact__form">
+          <div class="contact__form" data-fade>
             <form name="contact" method="POST" action="/success" class="form" data-netlify="true">
-              <label class="form__label fade fadeFromTop" for="name">Name</label>
-              <input class="form__input fade fadeFromTop" type="text" id="name" name="name" required="true" />
-              <label class="form__label fade fadeFromTop" for="email">Email</label>
-              <input class="form__input fade fadeFromTop" type="email" id="email" name="email" required="true" />
-              <label class="form__label fade fadeFromTop" for="phone">Phone</label>
-              <input class="form__input fade fadeFromTop" type="tel" id="phone" name="phone"/>
-              <label class="form__label fade fadeFromTop" for="message">Message</label>
+              <label class="form__label" for="name">Name</label>
+              <input class="form__input" type="text" id="name" name="name" required="true" />
+              <label class="form__label" for="email">Email</label>
+              <input class="form__input" type="email" id="email" name="email" required="true" />
+              <label class="form__label" for="phone">Phone</label>
+              <input class="form__input" type="tel" id="phone" name="phone"/>
+              <label class="form__label" for="message">Message</label>
               <textarea
-                class="form__textarea fade fadeFromTop"
+                class="form__textarea"
                 type="text"
                 id="message"
                 name="message"
                 required="true"
               ></textarea>
-              <input class="form__submit button fade fadeFromTop fadeDelayLong" type="submit" value="Send" />
+              <input class="form__submit button" type="submit" value="Send" />
             </form>
           </div>
           <div class="contact__map">
@@ -835,6 +836,7 @@
       </p>
     </div>
     <script src="/scripts/main.js"></script>
+    <script src="/scripts/fadeOnScroll.js"></script>
     <script src="/scripts/nav.js"></script>
     <script src="/scripts/gallery.js"></script>
     <script src="/scripts/testimonials.js"></script>
