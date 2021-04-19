@@ -25,3 +25,5 @@ accordionTriggers.forEach(trigger => {
     this.classList.toggle('active');
   });
 });
+
+console.log('testing branches');
