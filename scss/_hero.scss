@@ -2,18 +2,17 @@
   position: relative;
   padding: 2rem;
   color: $color-text;
-  background-image: linear-gradient(to bottom, rgba(34, 35, 39, 0.25), rgba(34, 35, 39, 0.25)),
-    url(/img/home-hero--mobile.jpg);
+  background-image: linear-gradient(to bottom, rgba(34, 35, 39, 0.25), rgba(34, 35, 39, 0.25)), url(/img/home-hero--mobile.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: $color-text;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @include respond(tab-port) {
-    background-image: linear-gradient(to bottom, rgba(34, 35, 39, 0.25), rgba(34, 35, 39, 0.25)),
-      url(/img/home-hero--desktop.jpg);
+    background-image: linear-gradient(to bottom, rgba(34, 35, 39, 0.25), rgba(34, 35, 39, 0.25)), url(/img/home-hero--desktop.jpg);
   }
 
   &::after {
