@@ -84,11 +84,6 @@ section {
       padding: 2rem;
       background-color: #f5f5f5; } }
 
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important; }
-
 .button {
   color: #f5f5f5;
   background-color: #f06800;
@@ -633,7 +628,7 @@ header {
   @media only screen and (min-width: 56.25em) {
     .details__column {
       margin: 0; } }
-  .details__column > h4 {
+  .details__column > h3 {
     font-size: 2rem; }
 
 .details__icon {

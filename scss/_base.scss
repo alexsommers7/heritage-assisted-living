@@ -105,9 +105,3 @@ section {
     background-color: $color-background;
   }
 }
-
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important;
-}
