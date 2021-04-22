@@ -706,7 +706,8 @@ header {
       max-width: 55%; } }
   .slider img {
     transition: transform 1s;
-    padding: 0.5rem; }
+    padding: 0.5rem;
+    width: 100%; }
   .slider__nav {
     position: absolute;
     width: 100%;

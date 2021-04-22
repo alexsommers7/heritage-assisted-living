@@ -26,6 +26,7 @@
   & img {
     transition: transform 1s;
     padding: 0.5rem; // make sure this is the same as the lineup margin below
+    width: 100%;
   }
 
   &__nav {
