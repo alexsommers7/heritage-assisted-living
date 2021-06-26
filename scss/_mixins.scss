@@ -1,40 +1,60 @@
 // RESPONSIVE BREAKPOINTS MIXIN
 @mixin respond($breakpoint) {
-    @if $breakpoint == tab-port {
-        @media only screen and (min-width: 37.5em) { @content }; // 600px
-    }
-    @if $breakpoint == tab-land {
-        @media only screen and (min-width: 56.25em) { @content }; // 900px
-    }
-    @if $breakpoint == desk-small {
-        @media only screen and (min-width: 75em) { @content }; // 1200px
-    }
-    @if $breakpoint == desk-medium {
-        @media only screen and (min-width: 87.5em) { @content }; // 1400px
-    }
-    @if $breakpoint == desk-large {
-        @media only screen and (min-width: 100em) { @content }; // 1600px
-    }
-    @if $breakpoint == desk-xlarge {
-        @media only screen and (min-width: 125em) { @content }; // 2000px
-    }
+  @if $breakpoint == tab-port {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (min-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+  @if $breakpoint == desk-small {
+    @media only screen and (min-width: 75em) {
+      @content;
+    } // 1200px
+  }
+  @if $breakpoint == desk-medium {
+    @media only screen and (min-width: 87.5em) {
+      @content;
+    } // 1400px
+  }
+  @if $breakpoint == desk-large {
+    @media only screen and (min-width: 100em) {
+      @content;
+    } // 1600px
+  }
+  @if $breakpoint == desk-xlarge {
+    @media only screen and (min-width: 125em) {
+      @content;
+    } // 2000px
+  }
 }
 
 // OTHER MIXINS
-// target ie 10/11 only
 @mixin ieOnly {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { @content };
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+@mixin motionless {
+  @media (prefers-reduced-motion) {
+    @content;
+  }
 }
 // responsive images
 @mixin retina($pixelRatio) {
-    @if $pixelRatio == two {
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { @content }
-    };
+  @if $pixelRatio == two {
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      @content;
+    }
+  }
 }
 // flex-column-center
 @mixin flex-col-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -37,6 +37,14 @@ body {
       display: none !important;
     }
   }
+
+  & * {
+    // for prefers-reduced-motion
+    @include motionless {
+      transition: all 0s !important;
+      animation: none !important;
+    }
+  }
 }
 
 body,

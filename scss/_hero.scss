@@ -25,6 +25,10 @@
     background-color: $color-text;
     animation: fade-out 1.5s ease-in-out forwards;
     z-index: 10;
+
+    @include motionless {
+      opacity: 0;
+    }
   }
 
   @include respond(desk-small) {
@@ -34,6 +38,10 @@
   &__heading {
     opacity: 0;
     animation: fade-in-down 0.75s 2.25s ease-in-out forwards;
+
+    @include motionless {
+      opacity: 1;
+    }
   }
 
   &__text {
@@ -70,5 +78,9 @@
     padding-left: 4px;
     opacity: 0;
     animation: fade-in 0.75s 1.5s ease-in-out forwards;
+
+    @include motionless {
+      opacity: 1;
+    }
   }
 }
