@@ -1082,7 +1082,7 @@ section.full-width.section--testimonials {
   display: flex;
   justify-content: center; }
   .footer__content {
-    max-width: 50rem;
+    max-width: 60rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap; }

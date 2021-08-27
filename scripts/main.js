@@ -25,3 +25,6 @@ accordionTriggers.forEach(trigger => {
     this.classList.toggle('active');
   });
 });
+
+// FOOTER DATE
+document.getElementById('footer__year').innerText = new Date().getFullYear();
