@@ -992,7 +992,7 @@ section.full-width.section--testimonials {
     order: 1;
     flex: 0 1 100%;
     max-width: 600px;
-    padding: 2rem;
+    padding: 0.5rem;
     margin: 2rem 0;
     display: flex;
     justify-content: center;
