@@ -17,6 +17,10 @@
   &__text,
   &__creds {
     margin: 0.5rem auto;
+
+    a {
+      color: inherit;
+    }
   }
 
   &__text {
