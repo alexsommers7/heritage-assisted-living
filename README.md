@@ -1,6 +1,6 @@
 # Heritage Assisted Living
 
-A local, small business website for an assisted living facility created with pure HTML, CSS/SCSS, and Javascript with hosting and form data handling via Netlify.
+A website for a local Assisted Living Facility that has since sold and rebranded. The owners were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.
 
 🔗 **[https://heritage-az.netlify.app/](https://heritage-az.netlify.app/)**
 
